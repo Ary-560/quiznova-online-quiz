@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17152f">
+  <title>QuizNova | Play. Learn. Level Up.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="QuizNova home"><span class="brand-mark">Q<span>✦</span></span><span>quiz<span class="brand-accent">nova</span></span></a>
+    <div class="topbar-right"><span class="live-dot"></span><span>YOUR DAILY BRAIN BOOST</span><span class="top-pill">✦ FREE TO PLAY</span></div>
+  </header>
+
+  <main class="container">
+    <section id="home-screen" class="screen">
+      <div class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-star">✦</span> THE SMART WAY TO LEARN</div>
+          <h1>Big brain<br>energy.<br><span class="gradient-text">Starts here.</span></h1>
+          <p class="intro">Challenge yourself, collect knowledge, and see how far your brain can go. Your next high score is one quiz away.</p>
+          <div class="hero-stats">
+            <div class="stat-icon">⚡</div><div><strong>Quick rounds</strong><span>5 questions · instant results</span></div>
+            <div class="stat-divider"></div>
+            <div class="stat-icon purple-icon">🏆</div><div><strong>Level up</strong><span>Learn from every answer</span></div>
+          </div>
+          <div class="hero-doodle doodle-star">✦</div><div class="hero-doodle doodle-circle"></div>
+        </div>
+
+        <div class="hero-art" aria-label="Quiz illustration">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="floating-chip chip-bolt">⚡ <span>FAST THINKER</span></div>
+          <div class="floating-chip chip-score"><span class="mini-trophy">🏆</span><span><b>New high score!</b><small>You're on a roll</small></span></div>
+          <div class="quiz-illustration">
+            <div class="illustration-top"><span class="mini-brand">Q.</span><span class="tiny-dots"><i></i><i></i><i></i></span></div>
+            <div class="illustration-label">QUESTION 03 <span>• • •</span></div>
+            <div class="illustration-question">Which one is<br><em>the odd one out?</em></div>
+            <div class="illustration-option"><span>A</span> Apple <b>✓</b></div>
+            <div class="illustration-option active-option"><span>B</span> Carrot <b>✦</b></div>
+            <div class="illustration-option"><span>C</span> Mango <b></b></div>
+            <div class="illustration-option"><span>D</span> Banana <b></b></div>
+            <div class="illustration-progress"><span></span></div>
+            <div class="illustration-footer"><span>2 OF 5 ANSWERED</span><span>↗</span></div>
+          </div>
+          <div class="floating-bubble bubble-purple">?</div><div class="floating-bubble bubble-yellow">✦</div>
+        </div>
+      </div>
+
+      <section class="choose-section">
+        <div class="section-heading"><div><p class="eyebrow">PICK YOUR CHALLENGE</p><h2>What are we playing today?</h2></div><span class="section-side-note">Choose a category <span>→</span></span></div>
+        <div class="category-grid">
+          <button class="category-card category-cs selected-category" data-subject="Computer Science">
+            <span class="category-emoji">💻</span><span class="category-tag">TECH & LOGIC</span><strong>Computer<br>Science</strong><span class="category-bottom">5 questions <b>↗</b></span><span class="card-decoration decoration-cs">01</span>
+          </button>
+          <button class="category-card category-code" data-subject="Programming">
+            <span class="category-emoji">👾</span><span class="category-tag">CODE MODE</span><strong>Programming</strong><span class="category-bottom">5 questions <b>↗</b></span><span class="card-decoration decoration-code">{ }</span>
+          </button>
+          <button class="category-card category-general" data-subject="General Knowledge">
+            <span class="category-emoji">🌍</span><span class="category-tag">BRAIN POWER</span><strong>General<br>Knowledge</strong><span class="category-bottom">5 questions <b>↗</b></span><span class="card-decoration decoration-general">✦</span>
+          </button>
+        </div>
+        <div class="start-row"><div class="start-hint"><span class="hint-icon">✧</span><span><b>Ready when you are</b><small>No pressure. Just progress.</small></span></div><button id="start-btn" class="primary-btn">Let's play <span>↗</span></button></div>
+      </section>
+    </section>
+
+    <section id="quiz-screen" class="screen hidden">
+      <div class="quiz-topline"><button id="exit-btn" class="text-btn">← Back to categories</button><span id="subject-badge" class="subject-badge">Computer Science</span></div>
+      <div class="quiz-layout">
+        <aside class="quiz-sidebar">
+          <div class="sidebar-icon">🧠</div><p class="eyebrow">FOCUS MODE</p><h2>Trust your<br><span class="gradient-text">instinct.</span></h2><p>Take your time, think it through, and pick your best answer.</p>
+          <div class="sidebar-bottom"><span class="live-dot"></span> Progress is progress.</div>
+          <div class="sidebar-doodle">✳</div>
+        </aside>
+        <div class="question-card">
+          <div class="question-meta"><span id="question-count">QUESTION 1 OF 5</span><span id="answered-count">0 answered</span></div>
+          <div class="progress-track"><div id="progress-fill" class="progress-fill"></div></div>
+          <div class="question-label">YOUR QUESTION <span>✦</span></div>
+          <h2 id="question-text">Question appears here</h2>
+          <p class="choose-answer">Choose one answer below</p>
+          <div id="options-list" class="options-list"></div>
+          <div class="question-actions"><button id="prev-btn" class="secondary-btn" disabled>← Previous</button><span class="keyboard-hint">TAKE YOUR BEST GUESS ✧</span><button id="next-btn" class="primary-btn">Next <span>→</span></button><button id="submit-btn" class="primary-btn hidden">Finish quiz <span>✓</span></button></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="result-screen" class="screen hidden">
+      <div class="result-card">
+        <div class="confetti confetti-left">✦</div><div class="confetti confetti-right">✧</div>
+        <div id="result-icon" class="result-icon">🏆</div><p class="eyebrow">ROUND COMPLETE</p><h1 id="result-heading">Look at you go!</h1>
+        <p id="result-message" class="intro">Here is your result.</p>
+        <div class="score-circle"><strong id="score-value">0/5</strong><span>YOUR SCORE</span></div>
+        <div class="result-stats"><div><strong id="correct-value">0</strong><span>Correct answers</span></div><div><strong id="wrong-value">0</strong><span>To practise</span></div><div><strong id="percent-value">0%</strong><span>Score rate</span></div></div>
+        <div class="result-actions"><button id="review-btn" class="secondary-btn">🔎 Review answers</button><button id="retry-btn" class="primary-btn">Play again <span>↗</span></button></div>
+      </div>
+      <div id="review-panel" class="review-panel hidden"><div class="review-heading"><p class="eyebrow">LEARN AS YOU GO</p><h2>Answer breakdown</h2></div><div id="review-list"></div></div>
+    </section>
+  </main>
+  <footer><span class="footer-mark">Q✦</span><span>quiznova</span><i></i> A mini project made for curious minds <span class="footer-right">KEEP GROWING ✦</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
